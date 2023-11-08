@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+.toggle-layout-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #007296;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+  }
+  
+  /* Ikona przycisku zmiany układu */
+  
+  .toggle-layout-button i {
+    font-size: 24px;
+  }
+  
+  /* Ukryj przycisk na większych ekranach */
+  
+  @media (min-width: 2768px) {
+    .toggle-layout-button {
+        display: none;
+    }
+  }
+
+   
+
+
+
+
+  #song-search {
+    text-align: center; /* Wyśrodkuj tekst */
+    line-height: 30px; /* Dostosuj wartość line-height według potrzeb */
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px; /* Dodaj odstęp na dole paska wyszukiwania */
+  
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    box-sizing: border-box;
+    font-size: 16px;
+  
+    /* Dodaj efekty hover i focus */
+    transition: background-color 0.3s;
+  
+    /* Usuń domyślny obramowanie (outline) dla elementów z fokusem */
+    outline: none;
+  
+    /* Dodaj zaokrąglenie w górnym lewym i prawym rogu */
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  
+    /* Zmniejsz przezroczystość w momencie hover i focus */
+    &:hover, &:focus {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+  }
+  
+  #song-search::placeholder {
+    color: rgba(255, 255, 255, 0.7); /* Kolor zanikającego tekstu w pasku wyszukiwania */
+  }
+  
+  #song-search:focus {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+  /* Zastosuj te style tylko na ekranach o szerokości mniejszej niż 768px */
+  @media (max-width: 768px) {
+    #song-search {
+      width: 100%;
+      left: 0;
+      border-radius: 0;
+    }
+  }
+  
+
+
+
+
+
+
+.song-list {
+    position: absolute; /* Position it absolutely within the container */
+    left: -10px; /* Adjust the left positioning as needed */
+    top: 0; /* Position it at the top */
+    background: rgba(0, 0, 0, 0.5); /* Add a background color with some transparency */
+    border-radius: 5px;
+    padding: 10px; /* Add some padding for better styling */
+    max-height: 100%; /* Limit the maximum height to make it responsive */
+    overflow-y: auto; /* Add a vertical scrollbar if needed when the list is too long */
+    width: 27%;
+    
+
+    /* Add a media query for responsiveness */
+    @media (max-width: 768px) {
+        left: 0; /* Adjust left positioning for smaller screens */
+        width: 30%; /* Make it full-width on smaller screens */
+        border-radius: 0; /* Remove border-radius for smaller screens */
+    }
+
+
+}
+
+/* Style the list items within the .song-list */
+.song-list ul {
+    list-style: none;
+    padding: 10px;
+}
+
+.song-list li {
+    cursor: pointer;
+    padding: 5px;
+    color: #fff;
+    font-size: 14px;
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+}
+
+li:last-child {
+    border-bottom: none; /* Usuwa linię pod ostatnim elementem listy */
+  }
+
+.song-list li:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transition: background 0.3s;
+}
+
+
+
+*{
+margin:0;    
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:#10a9eb;  
+font-family: 'poppins', sans-serif;
+}
+
+
+
+.container{
+
+    @media (max-width: 768px) {
+        width: 50%;
+        left: 65%;
+        right: auto; /* Adjust left positioning for smaller screens */
+        border-radius: 0; /* Remove border-radius for smaller screens */
+        position: relative; /* Change the position to relative */
+        /*margin-left: 10%; */ /* Shift the container's content to the right */
+        top: 20rem;
+
+        
+      }
+padding:20px;
+height:580px;
+width:360px;
+background:#007296;
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+border-radius:7px;
+box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+
+.container .image-box img{
+height:322px; 
+width:300px;
+position:absolute;
+top:28%;
+left:50%;
+transform:translate(-50%,-50%);
+max-width: 100%;
+height: auto;
+}
+
+.container .pre-container{
+height:285px;   
+width:100%;
+background: rgba(255, 255, 255, 0.1);
+box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+backdrop-filter: blur(30px);
+-webkit-backdrop-filter: blur(30px);
+border-top:1px solid rgba(255, 255, 255, 0.5);
+border-bottom-left-radius:7px;
+border-bottom-right-radius:7px;
+position:absolute;
+top:40%;
+left:0;
+margin-top:75px;
+overflow:hidden;
+}
+
+.container .pre-container .progress-area{
+height:16px;  
+width:100%;
+position:absolute;
+bottom:0;
+border-bottom-left-radius:7px;
+border-bottom-right-radius:7px;
+background:#8FDFE6;
+cursor:pointer;
+}
+
+.container .pre-container .progress-area .progress-bar{
+height:16px; 
+width:0%;
+background:#E8F7FA;
+border-bottom-left-radius:7px;
+cursor:pointer;
+}
+
+.container .pre-container .progress-area .curr-time{
+position:absolute;
+color:#E8F7FA;
+margin-top:-24px;
+margin-left:17px;
+font-size:14px;
+font-weight:300;
+}   
+
+.container .pre-container .progress-area .total-time{
+position:absolute; 
+color:#E8F7FA;
+margin-top:-24px;
+position:absolute;
+right:17px;
+font-size:14px;
+font-weight:300;
+}
+
+.container .pre-container .song-name{
+font-weight:400;
+margin-top:35px;
+text-align:center;
+color:#E8F7FA;
+font-size:19px;
+letter-spacing:1px;
+}
+
+.container .pre-container .artist-name{
+font-weight:300;
+margin-top:4px;
+text-align:center;
+color:#E8F7FA;
+font-size:12px;  
+letter-spacing:1px;
+}
+
+.container .pre-container .btns{
+height:100px;    
+width:100%;
+margin-top:30px;
+display:flex;
+align-items:center;
+justify-content: space-around;
+}
+
+.container .pre-container .btns .play-pause-btn{
+height:75px;  
+width:75px;
+border-radius:50%;
+border:1px solid #E8F7FA;
+display:flex;
+align-items:center;
+justify-content:center;
+color:#E8F7FA;
+font-size:28px;
+position:absolute;
+left:50%;
+transform:translate(-50%,-50%);
+margin-top:72px;
+cursor:pointer;
+}
+
+.container .pre-container .btns .play-pause-btn i{
+position:absolute;        
+}
+
+.container .pre-container .btns .play-pause-btn .fa-pause{
+display:none;   
+}
+
+.container .fa-backward-step,.container .fa-forward-step{
+color:#E8F7FA;   
+font-size:40px;
+margin-left:85px;
+cursor:pointer;
+margin: 0 10px;
+}
+
+.container .fa-forward-step{
+margin-left:138px;        
+}
